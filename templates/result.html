@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block body %}
+  <div class="container1">
+    <div id="home" class="result">
+      <h2>-------解析結果-------</h2>
+      <h5>〇〇さんの解析結果は…</h5>
+    </div>  
+  </div>
+    <div class="container2">
+      <br>
+      <div>
+        <div class="box5">
+        <span class="fas fa-user icon"></span>
+        <h3>AGE</h3>
+        <h4>{{ data1 }}</h4>
+        </div>
+      </div>
+
+      <br>
+      <div>  
+        <div class="box5">
+        <span class="fas fa-user icon"></span>
+        <h3>Civilstatus</h3>
+        <h4>{{ data2 }}</h4>
+        </div>
+      </div>
+
+      <br>
+      <div>  
+        <div class="box5">
+        <span class="fas fa-gamepad icon"></span>
+        <h3>Hobby</h3>
+        <h4>{{ data3 }}</h4>
+        </div>
+      </div> 
+
+      <br>
+      <div>
+        <div class="box5">
+        <span class="fas fa-briefcase icon"></span>
+        <h3>Occupation</h3>
+        <h4>{{ data4 }}</h4>
+        </div>
+      </div>
+
+      <br>
+      <div>
+        <div class="box5">
+        <span class="fas fa-user-tie icon"></span>
+        <h3>Gender</h3>
+        <h4>{{ data5 }}</h4>
+        </div>
+      </div>
+
+      <br>
+      <div>
+        <div class="box5">
+        <span class="fas fa-bus icon"></span>
+        <h3>Transportation</h3>
+        <h4>{{ data6 }}</h4>
+        </div>
+      </div>
+    </div>
+{% endblock %}
