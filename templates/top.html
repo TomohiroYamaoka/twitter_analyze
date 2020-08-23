@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block body %}
+  <section class="top">
+    <div class="container">
+        <h1>From Twitter</h1>
+        <a href="/" class="simple_square_btn2">See Who You Are</a>
+    </div>
+  </section>
+  <section class="main">
+    <h2>What From Twitter Can Do?</h2>
+    <p>From TwitterはTwitterの投稿から、ユーザーがどんな人物なのか推定します</p>
+    <p>以下のようなデータを推定することができます</p>
+    <div class="container">
+      <div class="text">
+        <span class="fas fa-user icon"></span>
+        <h2>年齢</h2>
+      </div>
+      <div class="text">
+        <span class="fas fa-yen-sign icon"></span>
+        <h2>給与</h2>
+      </div>
+      <div class="text">
+        <span class="fas fa-users icon"></span>
+        <h2>性別</h2>
+      </div>
+      <div class="text">
+        <span class="fas fa-gamepad icon"></span>
+        <h2>趣味</h2>
+      </div>
+      <div class="text">
+        <span class="fas fa-user-tie icon"></span>
+        <h2>職種</h2>
+      </div>
+    </div>
+  </section>
+  <section class="sub">
+    <h2>START ANALYZING</h2>
+    <div class="container">
+      <form action="/input" method="POST">
+        <textarea placeholder="Put Texts Here" name="inputText"></textarea>
+        <br>
+        <input value="START" type="submit"/>
+      </form>
+    </div>
+  </section>
+  <section class="footer">
+    <div class="container">
+      <p></p>
+    </div>
+  </section>
+  
+{% endblock %}

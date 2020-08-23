@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  font-family: 'Timmana',"M PLUS Rounded 1c";
+}
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  min-height: 450px;
+  background-position: center;
+  background-size: cover;
+  color: #00bfff;
+  text-align: center;
+}
+
+.top h1 {
+  margin-top: 0;
+  margin-bottom: 1px;
+  font-family: "Timmana";
+  font-size: 100px;
+  letter-spacing: 0.2em;
+  margin-left: 0.2em;
+}
+
+.simple_square_btn2 {
+  display: block;
+  margin:0 auto;
+	position: relative;
+	width: 160px;
+	padding: 0.5em;
+	text-align: center;
+	text-decoration: none;
+	color:deepskyblue;
+	background: #fff;
+  border:2px solid deepskyblue;
+  letter-spacing: 0.2em;
+}
+
+.simple_square_btn2:hover {
+	background: deepskyblue;
+  color: #fff;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.main {
+  background-color: lightskyblue;
+  color: #fff;
+  height: 330px;
+}
+
+.main h2 {
+  font-size: 35px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin-bottom: 0;
+  padding-top: 15px;
+}
+
+.main p {
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 0.1em;
+}
+
+.main .container {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  margin-top: 0;
+}
+.main .text { 
+  padding-bottom: 60px;
+  text-align: center;
+}
+.main .container h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 20px;
+}
+.main .icon	{
+display: inline-block;
+margin-top: 0;
+margin-bottom: 0;
+font-size: 50px;
+text-align: center;
+color: #fff;
+}
+
+.sub {
+  color: deepskyblue;
+}
+.sub h2 {
+  font-size: 35px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.flash {
+  text-align: center;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  color: #ff7d6e;
+  background: #ffebe9;
+}
+
+form {
+  width: 50%;
+  margin: 10% auto;
+  padding-bottom: 30px;
+  min-width: 9rem;
+  margin: auto;
+  text-align: center;
+}
+  
+textarea {
+  font-family: "Timmana", "M PLUS Rounded 1c";
+  float: left;
+  height: 10rem;
+  width: 100%;
+  max-width: 100%;
+  border: none;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  background:lightskyblue;
+  color:white;
+  letter-spacing: 0.1em;
+}
+
+input {
+  font-family: "Timmana", "M PLUS Rounded 1c";
+  display: block;
+  margin:0 auto;
+	position: relative;
+	width: 160px;
+	padding: 0.5em 0.5em;
+	text-align: center;
+	text-decoration: none;
+	color:deepskyblue;
+	background: #fff;
+  border:2px solid deepskyblue;
+  letter-spacing: 0.2em;
+}
+
+input:hover {
+	background: deepskyblue;
+  color: #fff;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+@media (min-width: 768px) {
+.main .container {
+  display: flex;
+  flex-wrap:wrap;
+  max-width: 1000px;
+  margin: auto;
+}
+.main .text	{
+  width: 20%;
+}
+}
