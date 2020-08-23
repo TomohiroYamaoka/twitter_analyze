@@ -14,7 +14,7 @@ def index():
 def input():
     if request.form["inputText"]:
         result = fetch()
-        return render_template("result.html", data=result)
+        return render_template("result.html",data1=result[0],data2=result[1],data3=result[2],data4=result[3],data5=result[4],data6=result[5])
     else:
         flash("テキストが入力されていません")
         return render_template("top.html")
@@ -52,7 +52,33 @@ def fetch():
   data = json.dumps(data).encode()
   r = requests.post(URL_Endpoint, headers=headers, data=data)
   data = r.json()
-  return data
+  
+  try: 
+      data1=data['result']['age']
+  except KeyError:
+      data1="なし"   
+  try: 
+      data2=data['result']['civilstatus']
+  except KeyError:
+      data2="なし"
+  try: 
+      data3=data['result']['hobby']
+  except KeyError:
+      data3="なし"
+  try: 
+      data4=data['result']['occupation']
+  except KeyError:
+      data4="なし"
+  try: 
+      data5=data['result']['gender']
+  except KeyError:
+      data5="なし" 
+  try: 
+      data6=data['result']['moving']
+  except KeyError:
+      data6="なし"                             
+  
+  return data1,data2,data3,data4,data5,data6  
 
 if __name__ == "__main__":
     app.run(debug=True, port=8888, threaded=True) 
