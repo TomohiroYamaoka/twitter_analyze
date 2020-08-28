@@ -6,6 +6,7 @@ h2{
     margin-bottom: 1px;
     font-family: 'Timmana',"M PLUS Rounded 1c";
     font-size: 50px;
+    text-align: center;
     letter-spacing: 0.2em;
     margin-left: 0.2em;
 }  
@@ -26,14 +27,8 @@ h4{
   letter-spacing: 0.2em;
   margin-left: 0.2em;
 }
-h5{
-  margin-top: 0;
-  margin-bottom: 1px;
-  font-family: 'Timmana',"M PLUS Rounded 1c";
-  font-size: 30px;
-  letter-spacing: 0.2em;
-  margin-left: 0.2em;
-}
+
+
 span
 {
   margin-top: 10;
@@ -62,7 +57,7 @@ span
     text-align: center;
   }
 
-.container2
+.container
 {
   margin: 0;
   padding: 0;
@@ -85,6 +80,7 @@ span
 {
   margin-left: 330px;
   margin-right: 300px;
+  margin-top: 100px;
   left: 400px;
   width: 500px;
   height: 350px;
@@ -98,7 +94,7 @@ span
   box-shadow: -10px 25px 50px rgba(0,0,0,.2);
 }　
 
-.container2 .box5::before
+.container .box5::before
 {
   content: '';
   width: 50%;
@@ -110,34 +106,22 @@ span
   z-index: 2;
 }
 
-
-
-.container2 .box5:nth-child(1) .icon
+.container .box5:nth-child(1) .icon
 {
   box-shadow: 0 0 0 #a8e0f0;
   background: #a8e0f0;
 }
-.container2 .box5:nth-child(1):hover .icon
+.container .box5:nth-child(1):hover .icon
 {
   box-shadow: 0 0 0 400px #a8e0f0;
 }
 
-@media screen and (max-width:768px) {
-  
-  .container1
+@media screen and (max-width:1000px) {
+  .container
   {
     display: flex;
     flex-wrap:wrap;
     max-width: 1000px;
     margin: auto;
   }
-  
-  .container2 
-  {
-    display: flex;
-    flex-wrap:wrap;
-    max-width: 1000px;
-    margin: auto;
-  } 
-  
 } 
