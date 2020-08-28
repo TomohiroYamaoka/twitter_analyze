@@ -1,7 +1,18 @@
 from flask import Flask, request, redirect, url_for, render_template, flash, session
+from dotenv import load_dotenv
+from os.path import join,dirname
 import requests
 import json
 import os
+
+load_dotenv(verbose=True)
+
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
+#cotohaAPIのアクセスキーを取得
+CLIENT_ID=os.environ["CLIENT_ID"]
+CLIENT_SECRET=os.environ["CLIENT_SECRET"]
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -28,8 +39,8 @@ def fetch():
 
   data = {
   "grantType":"client_credentials",
-  "clientId":"example",
-  "clientSecret":"example"
+  "clientId":CLIENT_ID,
+  "clientSecret":CLIENT_SECRET
   }
 
   data = json.dumps(data).encode()
