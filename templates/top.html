@@ -35,6 +35,11 @@
   </section>
   <section class="sub">
     <h2>START ANALYZING</h2>
+    {% for message in get_flashed_messages() %}
+      <div class="flash">
+        {{ message }}
+      </div>
+    {% endfor %}
     <div class="container">
       <form action="/input" method="POST">
         <textarea placeholder="Put Texts Here" name="inputText"></textarea>

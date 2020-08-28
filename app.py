@@ -1,7 +1,18 @@
 from flask import Flask, request, redirect, url_for, render_template, flash, session
+from dotenv import load_dotenv
+from os.path import join,dirname
 import requests
 import json
 import os
+
+load_dotenv(verbose=True)
+
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
+#cotohaAPIのアクセスキーを取得
+CLIENT_ID=os.environ["CLIENT_ID"]
+CLIENT_SECRET=os.environ["CLIENT_SECRET"]
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -14,7 +25,7 @@ def index():
 def input():
     if request.form["inputText"]:
         result = fetch()
-        return render_template("result.html", data=result)
+        return render_template("result.html",data1=result[0],data2=result[1],data3=result[2],data4=result[3],data5=result[4],data6=result[5])
     else:
         flash("テキストが入力されていません")
         return render_template("top.html")
@@ -28,8 +39,8 @@ def fetch():
 
   data = {
   "grantType":"client_credentials",
-  "clientId":"example",
-  "clientSecret":"example"
+  "clientId":CLIENT_ID,
+  "clientSecret":CLIENT_SECRET
   }
 
   data = json.dumps(data).encode()
@@ -52,7 +63,33 @@ def fetch():
   data = json.dumps(data).encode()
   r = requests.post(URL_Endpoint, headers=headers, data=data)
   data = r.json()
-  return data
+  
+  try: 
+      data1=data['result']['age']
+  except KeyError:
+      data1="なし"   
+  try: 
+      data2=data['result']['civilstatus']
+  except KeyError:
+      data2="なし"
+  try: 
+      data3=data['result']['hobby']
+  except KeyError:
+      data3="なし"
+  try: 
+      data4=data['result']['occupation']
+  except KeyError:
+      data4="なし"
+  try: 
+      data5=data['result']['gender']
+  except KeyError:
+      data5="なし" 
+  try: 
+      data6=data['result']['moving']
+  except KeyError:
+      data6="なし"                             
+  
+  return data1,data2,data3,data4,data5,data6  
 
 if __name__ == "__main__":
     app.run(debug=True, port=8888, threaded=True) 
